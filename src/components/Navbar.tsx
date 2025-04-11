@@ -11,7 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
+      setIsScrolled(window.scrollY > 120);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -68,7 +68,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className={`hidden md:flex w-full bg-white py-1 justify-center space-x-8 transition-all duration-300 ${
+          <div className={`hidden md:flex w-full bg-white border-t border-black py-1 justify-center space-x-8 transition-all duration-300 ${
             isScrolled ? 'opacity-0 -translate-y-20' : 'opacity-100'
           }`}>
             <Link href="/" className="text-black hover:text-gray-600 transition-colors duration-200">
@@ -91,12 +91,12 @@ export default function Navbar() {
       </nav>
 
       {/* Fixed Mini Navbar */}
-      <div className={`fixed top-6 left-0 right-0 z-50 bg-white backdrop-blur-sm shadow-md transition-all duration-300 ${
+      <div className={`fixed top-6 left-0 right-0 z-50 bg-white border-b border-black transition-all duration-300 ${
         isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
       }`}>
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-8 flex items-center justify-between">
           {/* Small Logo */}
-          <Link href="/" className="absolute top-1/2 -translate-y-1/2 left-4">
+          <Link href="/" className="absolute z-[200] top-full -translate-y-1/2 left-4 bg-white rounded-full p-1">
             <Image
               src="/images/logo.jpg"
               alt="Island Market Logo"

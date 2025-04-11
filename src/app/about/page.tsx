@@ -55,7 +55,7 @@ export default function AboutPage() {
   const sortedEvents = [...historicalEvents].sort((a, b) => b.year - a.year);
 
   return (
-    <div className="min-h-screen pb-16 bg-white/90 text-black">
+    <div className="min-h-screen pb-16 bg-gray-100/90 backdrop-blur-sm text-black">
       <div className="container mx-auto px-4 pt-8 md:pt-16">
         {/* Hero Section */}
         <div className="max-w-4xl mx-auto text-center mb-16">

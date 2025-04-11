@@ -9,7 +9,7 @@ const playfair = Playfair_Display({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col  overflow-hidden">
+    <section className="relative pb-24 pt-8 flex flex-col items-center  overflow-hidden">
       {/* Background - faded newspaper vibe */}
       <div className="absolute inset-0 z-0">
         <Image

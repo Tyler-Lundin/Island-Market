@@ -1,6 +1,12 @@
 'use client'
 
 import { useState } from 'react'
+import { Playfair_Display } from 'next/font/google'
+
+const playfair = Playfair_Display({ 
+  subsets: ['latin'],
+  variable: '--font-playfair',
+})
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -11,9 +17,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // In a real application, this would send the form data to a server
     console.log('Form submitted:', formData)
-    // Reset form
     setFormData({ name: '', email: '', message: '' })
     alert('Thank you for your message! We will get back to you soon.')
   }
@@ -27,84 +31,90 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen pb-16 bg-white/90">
-      {/* Hero Section */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-600">
-              We&apos;d love to hear from you
-            </p>
-          </div>
-        </div>
+    <div className="min-h-screen bg-gray-100/90 backdrop-blur-sm text-black font-serif">
+      {/* Hero / Masthead */}
+      <section className="border-b border-black py-12 text-center">
+        <h1 className={`${playfair.className} text-4xl md:text-6xl font-bold uppercase tracking-wide`}>
+          Contact the Editors
+        </h1>
+        <p className={`${playfair.className} text-md md:text-xl italic mt-2 text-black/70`}>
+          Letters to the Island Market
+        </p>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 bg-white/90">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Contact Form */}
+      {/* Main Content */}
+      <section className="py-16 px-4 max-w-4xl mx-auto">
+        <div className="border-t-2 border-b-2 border-black py-8">
+          <h2 className="text-2xl font-bold uppercase mb-8 tracking-wide">
+            Submit Your Message
+          </h2>
+
+          <form onSubmit={handleSubmit} className="space-y-6 text-left">
+            {/* Name */}
             <div>
-              <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={4}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
+              <label htmlFor="name" className="block text-sm font-bold uppercase tracking-wide mb-1">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-black bg-white text-black rounded-none focus:outline-none focus:ring-2 focus:ring-black"
+              />
             </div>
 
-            
-          </div>
+            {/* Email */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-bold uppercase tracking-wide mb-1">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 border border-black bg-white text-black rounded-none focus:outline-none focus:ring-2 focus:ring-black"
+              />
+            </div>
+
+            {/* Message */}
+            <div>
+              <label htmlFor="message" className="block text-sm font-bold uppercase tracking-wide mb-1">
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="w-full px-4 py-2 border border-black bg-white text-black rounded-none focus:outline-none focus:ring-2 focus:ring-black"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <div className="pt-4">
+              <button
+                type="submit"
+                className="w-full py-3 border border-black bg-black text-white font-bold uppercase tracking-wide hover:bg-white hover:text-black transition-all"
+              >
+                Send Letter
+              </button>
+            </div>
+          </form>
         </div>
       </section>
+
+      {/* Footer Quote */}
+      <footer className="border-t border-black py-8 text-center text-sm italic text-black/70">
+        Est. 1920 · Publishing your voices for over a century
+      </footer>
     </div>
   )
-} 
+}

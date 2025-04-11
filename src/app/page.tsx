@@ -16,25 +16,78 @@ export default function Home() {
       {/* Instagram Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8 text-[#2C3E50]">Follow Us on Instagram</h2>
-            <div className="flex justify-center">
-              <blockquote
-                className="instagram-media"
-                data-instgrm-permalink="https://www.instagram.com/theislandmarket/?hl=en"
-                data-instgrm-version="14"
-                style={{
-                  background: "#FFF",
-                  border: "0",
-                  borderRadius: "3px",
-                  boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
-                  margin: "1px",
-                  maxWidth: "540px",
-                  minWidth: "326px",
-                  padding: "0",
-                  width: "100%"
-                }}
-              ></blockquote>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center text-[#2C3E50]">Community & Updates</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Instagram Embed */}
+              <div className="bg-white/90 p-6 rounded-lg shadow-md">
+                <h3 className="text-xl font-semibold mb-4 text-[#2C3E50]">Follow Us on Instagram</h3>
+                <blockquote
+                  className="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/theislandmarket/?hl=en"
+                  data-instgrm-version="14"
+                  style={{
+                    background: "#FFF",
+                    border: "0",
+                    borderRadius: "3px",
+                    boxShadow: "0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)",
+                    margin: "1px",
+                    maxWidth: "540px",
+                    minWidth: "326px",
+                    padding: "0",
+                    width: "100%"
+                  }}
+                ></blockquote>
+              </div>
+
+              {/* Community Highlights */}
+              <div className="space-y-6">
+                <div className="bg-white/90 p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-4 text-[#2C3E50]">Featured Products</h3>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-[#FFC107] rounded-full flex items-center justify-center mx-auto mb-2">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                      </div>
+                      <p className="text-sm text-[#7F8C8D]">Local Honey</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-[#4CAF50] rounded-full flex items-center justify-center mx-auto mb-2">
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                      </div>
+                      <p className="text-sm text-[#7F8C8D]">Fresh Bread</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white/90 p-6 rounded-lg shadow-md">
+                  <h3 className="text-xl font-semibold mb-4 text-[#2C3E50]">Upcoming Events</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-[#FF9800] rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold">15</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#2C3E50]">Local Farmers Market</p>
+                        <p className="text-sm text-[#7F8C8D]">Saturday, 9 AM - 2 PM</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-[#FF9800] rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold">22</span>
+                      </div>
+                      <div>
+                        <p className="font-medium text-[#2C3E50]">Artisan Showcase</p>
+                        <p className="text-sm text-[#7F8C8D]">Saturday, 10 AM - 4 PM</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
