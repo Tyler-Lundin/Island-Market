@@ -9,69 +9,63 @@ const playfair = Playfair_Display({
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-screen flex flex-col  overflow-hidden">
+      {/* Background - faded newspaper vibe */}
       <div className="absolute inset-0 z-0">
         <Image
           src="/images/hero.jpeg"
           alt="Island Market"
           fill
-          className="object-cover object-top"
+          className="object-cover object-top grayscale scale-110"
           priority
-          quality={75}
         />
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-white/90" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-32 md:py-40">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Main Heading */}
-          <h1 className={`${playfair.className} text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight`}>
+      {/* Main Content */}
+      <div className="relative z-10 px-6 py-12 max-w-2xl w-full text-center">
+        {/* "Masthead" */}
+        <div className="border-y border-black py-4 mb-8">
+          <h1 className={`${playfair.className} text-5xl font-bold uppercase tracking-wide text-black`}>
             Island Market
           </h1>
-
-          {/* Subheading */}
-          <p className={`${playfair.className} text-xl md:text-2xl text-white/90 mb-8 italic`}>
+          <p className={`${playfair.className} text-lg italic text-black/80 mt-2`}>
             A century of community, tradition, and quality
           </p>
+        </div>
 
-          {/* Description */}
-          <p className="text-lg md:text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-            Since 1920, we&apos;ve been more than just a grocery store. We&apos;re a gathering place, 
-            a supporter of local artisans, and a cornerstone of the Logan community.
-          </p>
+        {/* Feature Story Blurb */}
+        <p className="text-base text-black/90 leading-relaxed mb-10">
+          Since 1920, we’ve been more than just a grocery store. We’re a gathering place, 
+          a supporter of local artisans, and a cornerstone of the Logan community.
+        </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="/products" 
-              className="px-8 py-3 bg-[var(--primary-yellow)] text-black font-semibold rounded-full hover:bg-[var(--primary-yellow)]/90 transition-colors"
-            >
-              Shop Local
-            </Link>
-            <Link 
-              href="/about" 
-              className="px-8 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-colors"
-            >
-              Our Story
-            </Link>
-          </div>
+        {/* CTA Buttons */}
+        <div className="flex flex-col gap-3 w-full">
+          <Link 
+            href="/products" 
+            className="w-full py-3 bg-black text-white font-semibold tracking-wide uppercase rounded-none border border-black hover:bg-white hover:text-black transition-all"
+          >
+            Shop Local
+          </Link>
+          <Link 
+            href="/about" 
+            className="w-full py-3 bg-white text-black border border-black font-semibold tracking-wide uppercase rounded-none hover:bg-black hover:text-white transition-all"
+          >
+            Our Story
+          </Link>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
-        <div className="flex flex-col items-center">
-          <div className="w-4 h-8 border-2 border-white/50 rounded-full flex items-center justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full animate-bounce"></div>
+      {/* Bottom Scroll Cue */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
+        <div className="flex flex-col items-center text-black/70 text-sm">
+          <div className="w-4 h-8 border-2 border-black rounded-full flex items-center justify-center">
+            <div className="w-1 h-3 bg-black rounded-full animate-bounce" />
           </div>
-          <span className="text-white/50 text-sm mt-2">Scroll</span>
+          <span className="mt-1">Scroll</span>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
     </section>
   );
-} 
+}

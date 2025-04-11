@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <>
       {/* Main Nav Container */}
-      <nav className={`relative z-50 transition-all duration-500 bg-white/90 ${
+      <nav className={`relative z-50 transition-all duration-500 bg-white/75 ${
         isScrolled ? 'h-32' : 'h-48'
       }`}>
         <div className=" h-full">
@@ -129,11 +129,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden text-black hover:text-gray-600 transition-colors duration-200"
+            className="md:hidden text-black hover:text-gray-600 transition-colors duration-200 absolute top-1/2 -translate-y-1/2 right-4"
             aria-label="Open menu"
           >
             <svg
-              className="w-0 h-0"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

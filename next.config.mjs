@@ -6,12 +6,18 @@ const nextConfig = {
   },
   // Add trailing slash to ensure proper routing
   trailingSlash: true,
-  // Add debug logging
-  experimental: {
-    logging: {
-      level: 'debug'
+  // Configure src directory
+  distDir: '.next',
+  // Add build-time logging
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.optimization = {
+        ...config.optimization,
+        minimize: false,
+      };
     }
-  }
+    return config;
+  },
 };
 
 export default nextConfig; 
