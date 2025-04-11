@@ -1,19 +1,9 @@
 import Hero from '@/components/Hero';
-import InstagramSection from '@/components/InstagramSection';
+import InstagramCard from '@/components/InstagramCard';
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* Instagram Embed Script */}
-      <Script
-        src="https://www.instagram.com/embed.js"
-        strategy="afterInteractive"
-        onLoad={() => {
-          // @ts-expect-error - Instagram global object
-          window.instgrm?.Embeds?.process();
-        }}
-      />
-
       {/* Hero Section */}
       <Hero />
 
@@ -24,7 +14,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-8 text-center text-[#2C3E50]">Community & Updates</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Instagram Embed */}
-              <InstagramSection />
+              <InstagramCard />
 
               {/* Community Highlights */}
               <div className="space-y-6">
