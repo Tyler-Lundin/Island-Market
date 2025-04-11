@@ -9,7 +9,7 @@ export default function Home() {
         src="https://www.instagram.com/embed.js"
         strategy="afterInteractive"
         onLoad={() => {
-          // @ts-ignore
+          // @ts-expect-error - Instagram global object
           window.instgrm?.Embeds?.process();
         }}
       />
