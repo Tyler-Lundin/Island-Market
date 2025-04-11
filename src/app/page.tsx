@@ -14,7 +14,7 @@ export default function Home() {
       <Hero />
 
       {/* Instagram Section */}
-      <section className="py-16 bg-white/80 backdrop-blur-sm">
+      <section className="py-16 bg-gray-100/90 border-y border-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center text-[#2C3E50]">Community & Updates</h2>

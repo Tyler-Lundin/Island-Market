@@ -3,87 +3,70 @@ import { FaFacebook, FaInstagram, FaTwitter, FaMapMarkerAlt, FaPhone, FaEnvelope
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#f3f1eb] text-black border-t border-black font-serif">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* About Section */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold">Island Market</h3>
-            <p className="text-gray-300">
-              Serving Logan, Utah since 1919. Your local source for fresh produce, craft products, and community service.
+            <h3 className="text-2xl font-bold uppercase">Island Market</h3>
+            <p className="text-black/70 leading-relaxed text-sm">
+              Serving Logan, Utah since 1919. Your local source for fresh produce, handmade goods, and old-fashioned community service.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent transition-colors">
-                <FaFacebook size={24} />
+            <div className="flex space-x-4 text-black/70">
+              <a href="#" className="hover:text-black">
+                <FaFacebook size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <FaInstagram size={24} />
+              <a href="#" className="hover:text-black">
+                <FaInstagram size={20} />
               </a>
-              <a href="#" className="hover:text-accent transition-colors">
-                <FaTwitter size={24} />
+              <a href="#" className="hover:text-black">
+                <FaTwitter size={20} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/" className="hover:text-accent transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" className="hover:text-accent transition-colors">
-                  Products
-                </Link>
-              </li>
-              <li>
-                <Link href="/community" className="hover:text-accent transition-colors">
-                  Community
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-accent transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-accent transition-colors">
-                  Contact
-                </Link>
-              </li>
+          <div>
+            <h3 className="text-xl font-semibold uppercase mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              {['Home', 'Products', 'Community', 'About Us', 'Contact'].map((text, idx) => (
+                <li key={idx}>
+                  <Link href={`/${text === 'Home' ? '' : text.toLowerCase().replace(/\s/g, '')}`} className="hover:underline">
+                    {text}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Contact Us</h3>
-            <div className="space-y-2">
-              <div className="flex items-center space-x-2">
-                <FaMapMarkerAlt />
+          <div>
+            <h3 className="text-xl font-semibold uppercase mb-4">Contact Us</h3>
+            <ul className="space-y-2 text-sm text-black/80">
+              <li className="flex items-center space-x-2">
+                <FaMapMarkerAlt className="text-black/60" />
                 <span>400 E Center St, Logan, UT 84321</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaPhone />
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaPhone className="text-black/60" />
                 <span>(435) 555-1234</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <FaEnvelope />
+              </li>
+              <li className="flex items-center space-x-2">
+                <FaEnvelope className="text-black/60" />
                 <span>info@islandmarket.com</span>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Island Market. All rights reserved.</p>
+        {/* Footer Bottom */}
+        <div className="border-t border-black mt-12 pt-6 text-center text-xs text-black/60 italic">
+          <p>Island Market &middot; Est. 1919 &middot; Logan, Utah</p>
+          <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
       </div>
     </footer>
   )
 }
 
-export default Footer 
+export default Footer

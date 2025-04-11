@@ -68,7 +68,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className={`hidden md:flex w-full bg-white border-t border-black py-1 justify-center space-x-8 transition-all duration-300 ${
+          <div className={`hidden md:flex w-full bg-white border-y border-black py-1 justify-center space-x-8 transition-all duration-300 ${
             isScrolled ? 'opacity-0 -translate-y-20' : 'opacity-100'
           }`}>
             <Link href="/" className="text-black hover:text-gray-600 transition-colors duration-200">
