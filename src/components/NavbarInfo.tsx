@@ -45,23 +45,23 @@ export default function NavbarInfo() {
   }, []);
 
   return (
-    <div className="w-full bg-white/90 backdrop-blur-sm fixed z-[100] border-b border-black">
+    <div className="w-full bg-black/75 backdrop-blur-sm fixed h-6 z-[100] border-b border-black/50">
       <div className="container mx-auto">
         <div className="flex justify-center items-center space-x-6 text-xs py-1">
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-1 text-black bg-green-500 rounded-full px-2 absolute top-1/2 -translate-y-1/2 left-4">
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className={isOpen ? 'text-green-600' : 'text-red-600'}>
+            <span className={isOpen ? 'text-black' : 'text-red-600'}>
               {isOpen ? 'Open Now' : 'Closed'}
             </span>
           </div>
           {isOpen && (
-            <div className="flex items-center space-x-1">
+            <div className="flex items-center space-x-1 text-white bg-red-500 rounded-full px-2 absolute top-1/2 -translate-y-1/2 right-4">
               <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span>Closes at {closingTime}</span>
+              <span>Closing {closingTime}</span>
             </div>
           )}
         </div>

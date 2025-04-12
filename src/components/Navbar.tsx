@@ -91,7 +91,7 @@ export default function Navbar() {
       </nav>
 
       {/* Fixed Mini Navbar */}
-      <div className={`fixed top-6 left-0 right-0 z-50 bg-white border-b border-black transition-all duration-300 ${
+      <div className={`fixed top-6 left-0 right-0 z-50 bg-white/75 backdrop-blur-sm border-b border-black transition-all duration-300 ${
         isScrolled ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
       }`}>
         <div className="container mx-auto px-4 h-8 flex items-center justify-between">

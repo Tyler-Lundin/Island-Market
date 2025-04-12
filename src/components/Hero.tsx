@@ -16,10 +16,10 @@ export default function Hero() {
           src="/images/hero.jpeg"
           alt="Island Market"
           fill
-          className="object-cover object-top grayscale scale-110"
+          className="object-cover object-center scale-110"
           priority
         />
-        <div className="absolute inset-0 bg-white/90" />
+        <div className="absolute inset-0 bg-white/75" />
       </div>
 
       {/* Main Content */}
